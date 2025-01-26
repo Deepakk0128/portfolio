@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Deepak's Personal Portfolio Website">
+    <meta name="keywords" content="Portfolio, Web Developer, Designer, Deepak">
+    <meta name="author" content="Deepak">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>   
+   <link rel="stylesheet" href="style.css">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">DEEPAK VERMA</a>
+        <nav class="navbar">
+            <a href="home.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Service</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-content">
+            <h1>Hi I'M DEEPAK </h1>
+            <h3>FULL STACK WEB DEVELOPER</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, ipsam. Ullam, consequatur ratione, quibusdam quam veniam quod rerum consectetur deserunt eligendi ea minus! Aliquam earum dignissimos velit.</p>
+            <div class="btn-box">
+                <a href="#">Hire Me</a>
+                <a href="#">Let's Talk</a>
+            </div>
+        </div>
+        <div class="home-sci">
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-linkedin'></i></a>
+        </div>
+        <span class="home-imgHover"></span>
+    </section>
+
+    <main>
+        <section class="contact">
+                <button style="background-color: rgb(101, 25, 207); color: rgb(218, 221, 21);" id="theme-toggle">Switch to Dark Mode</button>
+          <h1>Contact Me</h1>
+          <form action="https://formspree.io/f/mnqlkdyp" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </section>
+      </main>
+      <section  style="color: blue; background-color: white;" class="testimonials">
+        <h1>What My Clients Say</h1>
+        <div class="testimonial-item">
+          <p>"Deepak's work is outstanding! Highly recommended."</p>
+          <h4>- John Doe</h4>
+        </div>
+        <div class="testimonial-item">
+          <p>"Creative and professional service! Loved the design."</p>
+          <h4>- Jane Smith</h4>
+        </div>
+      </section>
+      <section style="color: brown;" data-aos="fade-up">
+        <h1>My Awesome Section</h1>
+      </section>
+      <script>
+        document.querySelectorAll('a').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            if (this.hash !== '') {
+              e.preventDefault();
+              const target = document.querySelector(this.hash);
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+              });
+            }
+          });
+        });
+                
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+            toggleButton.textContent = 'Switch to Light Mode';
+            } else {
+            toggleButton.textContent = 'Switch to Dark Mode';
+            }
+        });
+        AOS.init();
+    </script>   
+    </body>
+</html>
